@@ -4,6 +4,7 @@
 #Grub
 - name: grub restart
   command: update-grub
+  when: ansible_distribution_release == 'bullseye'
 - name: ipv4 flush route
   command: sysctl -w net.ipv4.route.flush=1
 - name: ipv6 flush route
